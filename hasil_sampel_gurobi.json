@@ -1,0 +1,59 @@
+[
+  {
+    "sample": 1,
+    "sampleSize": 3,
+    "time": 0.01400613784790039,
+    "assigned": 3,
+    "unassigned": 0,
+    "objective": 191
+  },
+  {
+    "sample": 2,
+    "sampleSize": 10,
+    "time": 0.20008063316345215,
+    "assigned": 10,
+    "unassigned": 0,
+    "objective": 197
+  },
+  {
+    "sample": 3,
+    "sampleSize": 15,
+    "time": 0.40514492988586426,
+    "assigned": 15,
+    "unassigned": 0,
+    "objective": 207
+  },
+  {
+    "sample": 4,
+    "sampleSize": 20,
+    "time": 9.059833288192749,
+    "assigned": 20,
+    "unassigned": 0,
+    "objective": 216
+  },
+  {
+    "sample": 5,
+    "sampleSize": 25,
+    "time": 1492.5476729869843,
+    "assigned": 25,
+    "unassigned": 0,
+    "objective": 222
+  },
+  {
+    "sample": 6,
+    "sampleSize": 30,
+    "time": 73.656,
+    "assigned": 30,
+    "unassigned": 0,
+    "objective": 243
+  },
+  {
+    "sample": 7,
+    "sampleSize": 35,
+    "time": "± 180.000s",
+    "assigned": "-",
+    "unassigned": "-",
+    "objective": "-"
+  }
+  
+]

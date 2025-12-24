@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <%- include('partials/header', { title }) %>
+        <main class="home-page">
+            <div class="container2">
+                <div class="left">
+                    <div class="form-grup">
+                        <form id="mainForm" action="/api/timepref" method="POST" enctype="multipart/form-data">
+                            <div><label>Jumlah Ruangan</label>
+                                <input name="jumlahRuangan" type="text" />
+                            </div>
+                            <div><label>Jumlah Hari</label>
+                                <input name="jumlahHari" type="text" />
+                            </div>
+                            <div><label>Jumlah Slot per Hari</label>
+                                <input name="jumlahSlot" type="text" placeholder="Contoh: 7" />
+                            </div>
+                            <div><label>Tanggal Mulai</label>
+                                <input name="tanggalMulai" type="date" />
+                            </div>
+                            <div><label>Kapasitas Mahasiswa</label>
+                                <input name="kapasitasRuangan" type="text" />
+                            </div>
+                            <div><label>File Mahasiswa (xls/xlsx)</label>
+                                <input name="fileMahasiswa" type="file" accept=".xlsx" />
+                            </div>
+                            <div><label>File Preferensi (csv)</label>
+                                <input name="filePreferensi" type="file" accept=".csv" />
+                            </div>
+                            <button type="button" id="btnTimePref">create timePref slot</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- TODO: but responsive dengan size H dan W -->
+                <div class="right">
+                    <div class="card" style="position: relative;">
+                        <button type="button" onclick="downloadPreferencesCSV()" class="small-btn"
+                            style="position: absolute; top: 0px; right: 10px; padding: 6px 12px; font-size: 0.9em; z-index: 10;">
+                            📥 Unduh Pref
+                        </button>
+                        <h3>PREFERENSI DOSEN</h3>
+                        <div id="pref-container" class="table-wrap">
+                            <em>Isi input, lalu klik "create timePref".</em>
+                        </div>
+                        <div class="actions">
+                            <button type="button" id="btn-generate" class="primary">Buat penjadwalan Optimal</button>
+                            <button type="button" id="btnPreview" class="small-btn">Perbandingan Greedy</button>
+                            <button type="button" id="btnGurobi" class="small-btn">Perbandingan Gurobi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <pre id="result-box" style="white-space:pre-wrap; background:#111; color:#ddd; padding:12px;
+                border-radius:8px; min-height:100px;">
+// Belum ada hasil. Klik "Buat penjadwalan Optimal".
+        </pre> -->
+
+            <%- include('partials/footer') %>
+                <script src="pref-render.js"></script>
+                <script src="output.js"></script>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const saved = localStorage.getItem("formInputs");
+                        if (saved) {
+                            const data = JSON.parse(saved);
+                            document.querySelector('input[name="jumlahRuangan"]').value = data.jumlahRuangan || '';
+                            document.querySelector('input[name="jumlahHari"]').value = data.jumlahHari || '';
+                            document.querySelector('input[name="jumlahSlot"]').value = data.jumlahSlot || '';
+                            document.querySelector('input[name="tanggalMulai"]').value = data.tanggalMulai || '';
+                            document.querySelector('input[name="kapasitasRuangan"]').value = data.kapasitasRuangan || '';
+                            // Preferences akan di-set ulang saat klik btnTimePref
+                        }
+                    });
+                </script>
+        </main>
+</body>
+
+</html>

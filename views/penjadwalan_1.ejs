@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style3.css" />
+    <style>
+        /* Force all table headers and cells to be left-aligned */
+        #tblJadwal th,
+        #tblJadwal td,
+        #tblUnassigned th,
+        #tblUnassigned td,
+        .table th,
+        .table td {
+            text-align: left !important;
+        }
+    </style>
+</head>
+
+<body class="penjadwalan-page">
+    <%- include('partials/header', { title }) %>
+        <main class="penjadwalan-content">
+            <h3>Hasil Penjadwalan</h3>
+            <div class="container3">
+                <h4>Jadwal Terjadwal</h4>
+                <div class="table-scroll">
+                    <table id="tblJadwal" class="table">
+                        <thead>
+                            <tr>
+                                <th>Hari</th>
+                                <th>Slot</th>
+                                <th>Ruangan</th>
+                                <th>NIM</th>
+                                <th>Nama</th>
+                                <th>Type</th>
+                                <th>Pembimbing</th>
+                                <th>Dosen yang Hadir</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container3">
+                <h4>Informasi Penjadwalan</h4>
+                <div class="info-tables-wrapper">
+                    <div class="info-table-section">
+                        <h5>Statistik Umum</h5>
+                        <table id="tblStatistik" class="info-table">
+                            <tbody>
+
+                                <tr>
+                                    <td class="info-label">Jumlah Slot yang Dipakai</td>
+                                    <td class="info-value" id="stat-slots">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="info-label">Jumlah Hari</td>
+                                    <td class="info-value" id="stat-days">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="info-label">Jumlah Hari Penjadwalan Manual 2024/2025</td>
+                                    <td class="info-value" style="color: red;">7</td>
+                                </tr>
+                                <tr>
+                                    <td class="info-label">Jumlah Mahasiswa Terjadwal</td>
+                                    <td class="info-value" id="stat-students-assigned">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="info-label">Jumlah Mahasiswa Tidak Terjadwal</td>
+                                    <td class="info-value" id="stat-students-unassigned">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="info-table-section">
+                        <h5>Informasi Dosen</h5>
+                        <table id="tblDosenInfo" class="info-table">
+                            <tbody>
+                                <tr>
+                                    <td class="info-label">Jumlah Dosen Lengkap Terjadwal</td>
+                                    <td class="info-value" id="stat-dosen-complete">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="info-label">Jumlah Dosen Tidak Terjadwal</td>
+                                    <td class="info-value" id="stat-dosen-unassigned">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="info-table-section">
+                        <h5>Urutan Dosen (Greedy)</h5>
+                        <div class="sorted-lecturers-scroll">
+                            <table id="tblUrutanDosen" class="info-table-small">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Dosen</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-table-section full-width">
+                    <h5>Daftar Dosen Tidak Terjadwal</h5>
+                    <div class="table-scroll">
+                        <table id="tblDosenTidakLengkap" class="table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Dosen</th>
+                                    <th>Jumlah Mahasiswa yang Seharusnya Dijadwalkan</th>
+                                    <th>Jumlah Mahasiswa Terjadwal</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="container3">
+                <h4>Mahasiswa Tidak Terjadwal</h4>
+                <div class="table-scroll">
+                    <table id="tblUnassigned" class="table">
+                        <thead>
+                            <tr>
+                                <th>NIM</th>
+                                <th>Nama</th>
+                                <th>Type</th>
+                                <th>Pembimbing</th>
+                                <th>Alasan Unassigned</th>
+                                <th>Time Preference</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="action">
+                <button id="btn-kembali">kembali</button>
+                <button id="btn-save-xlsx">Download XLSX</button>
+            </div>
+        </main>
+        <%- include('partials/footer') %>
+            <script src="/penjadwalan_1.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</body>
+
+</html>

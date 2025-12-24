@@ -1,0 +1,399 @@
+/* ===== Halaman Home: namespace ===== */
+.home-page {
+    width: 98%;
+    max-width: 1920px;
+    margin: 16px auto 24px;
+}
+
+/* Page title for comparison */
+.page-title {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+/* Comparison wrapper - 3 containers side by side */
+.comparison-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto 20px;
+}
+
+@media (max-width: 1600px) {
+    .comparison-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Container title */
+.container-title {
+    text-align: center;
+    color: #fff;
+    background: #007bff;
+    padding: 10px;
+    margin: 0 0 15px 0;
+    border-radius: 10px 10px 0 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Comparison container - smaller version */
+.comparison-container {
+    background: #c3c3c3;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: visible;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Smaller text in comparison containers */
+.comparison-container label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.comparison-container input[type="text"],
+.comparison-container input[type="date"],
+.comparison-container input[type="file"] {
+    font-size: 14px;
+    padding: 8px 10px;
+}
+
+/* Comparison buttons - centered below all containers */
+.comparison-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 30px auto;
+    max-width: 500px;
+}
+
+.comparison-buttons button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comparison-buttons #btn-back {
+    background-color: #6c757d;
+    color: white;
+}
+
+.comparison-buttons #btn-back:hover {
+    background-color: #5a6268;
+}
+
+.comparison-buttons #btn-generate {
+    background-color: #28a745;
+    color: white;
+}
+
+.comparison-buttons #btn-generate:hover {
+    background-color: #218838;
+}
+
+/* Override body for home page */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: block; /* Change from flex to block */
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header fixed */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f0f0f0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust main content to account for fixed header */
+.home-page {
+    padding-top: 120px; /* Adjust based on header height */
+}
+
+/* ===== Grid 2 kolom: kiri fleksibel, kanan cukup lebar ===== */
+.home-page .container2:not(.comparison-container) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    background: #c3c3c3;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+}
+
+@media (max-width: 1024px) {
+    .home-page .container2:not(.comparison-container) {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
+
+/* ===== Kolom kiri ===== */
+.home-page .left {
+    background: #fff;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+/* Left in comparison container needs more padding */
+.comparison-container .left {
+    background: transparent;
+    padding: 5px;
+    border-radius: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* opsional: form terlihat rapi */
+.home-page .form-grup {
+    background: #f8f8f8;
+    padding: 20px 24px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+/* Smaller form for comparison containers */
+.comparison-container .form-grup {
+    max-width: 100%;
+    padding: 25px;
+    min-height: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.home-page form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+/* Single column for comparison forms */
+.comparison-form {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    flex: 1;
+    align-content: start;
+}
+.home-page label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+.home-page input[type="text"],
+.home-page input[type="date"],
+.home-page input[type="file"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* File row styling for side-by-side layout */
+.file-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    grid-column: span 2; /* Span across both columns */
+}
+
+/* File row in comparison form - single column */
+.comparison-form .file-row {
+    grid-template-columns: 1fr;
+    grid-column: span 1;
+    gap: 15px;
+}
+
+.file-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-col label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.file-col input[type="file"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+    grid-column: span 2; /* Span across both columns */
+}
+
+/* Button group in comparison form */
+.comparison-form .button-group {
+    grid-column: span 1;
+}
+
+.button-group button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-group #btn-back {
+    background-color: #6c757d;
+    color: white;
+}
+
+.button-group #btn-back:hover {
+    background-color: #5a6268;
+}
+
+.button-group #btn-generate {
+    background-color: #007bff;
+    color: white;
+}
+
+.button-group #btn-generate:hover {
+    background-color: #0056b3;
+}
+
+/* ===== Kolom kanan (card) ===== */
+.home-page .right {
+    padding: 0;
+    background: transparent;
+    display: flex;
+}
+
+.home-page .right .card {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+
+    /* batasi tinggi: konten di dalam yang scroll,
+     tombol tetap terlihat */
+    max-height: calc(100vh - 200px); /* adjust bila header/footer tinggi */
+    overflow: hidden;
+}
+.home-page .right h3 {
+    margin: 0 0 4px;
+}
+
+/* area tabel scroll */
+.home-page .right .table-wrap {
+    flex: 1 1 auto;
+    min-height: 0; /* penting agar boleh overflow */
+    max-height: 56vh;
+    overflow: auto; /* vertikal & horizontal */
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    padding: 8px;
+    position: relative; /* untuk sticky header */
+    width: 100%;
+}
+
+/* tombol bar sticky */
+.home-page .right .actions {
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    padding: 12px 0 0;
+    margin-top: 4px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, #fff 24px),
+        #fff;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.home-page .right .actions .primary,
+.home-page .right .actions .small-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+/* ===== Tabel preferensi (fit ke card) ===== */
+.home-page table.pref {
+    width: 100%; /* isi penuh card */
+    table-layout: auto; /* kalkulasi dari konten */
+    border-collapse: collapse;
+    font: 14px/1.4 system-ui, sans-serif;
+}
+
+.home-page .pref th,
+.home-page .pref td {
+    border: 1px solid #cbd5e1;
+    padding: 6px 8px;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 240px;
+}
+
+/* sticky header (2 baris) */
+.home-page .pref thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #eef2f7;
+}
+.home-page .pref thead tr:nth-child(2) th {
+    top: 36px; /* sesuaikan dengan tinggi baris header 1 */
+    z-index: 3;
+}
+.pref td.td-dosen,
+.pref td.td-date {
+    cursor: pointer;
+    user-select: none;
+}

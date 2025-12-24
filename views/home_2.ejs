@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <%- include('partials/header', { title }) %>
+        <main class="home-page">
+            <h2 class="page-title">Perbandingan 3 Konfigurasi Penjadwalan</h2>
+
+            <div class="comparison-wrapper">
+                <!-- Container 1 -->
+                <div class="container2 comparison-container">
+                    <div class="left">
+                        <div class="form-grup">
+                            <form id="form1" class="comparison-form">
+                                <div><label>Jumlah Ruangan</label>
+                                    <input name="jumlahRuangan" type="text" required />
+                                </div>
+                                <div><label>Jumlah Hari</label>
+                                    <input name="jumlahHari" type="text" required />
+                                </div>
+                                <div><label>Jumlah Slot per Hari</label>
+                                    <input name="jumlahSlot" type="text" placeholder="Contoh: 7" required />
+                                </div>
+                                <div><label>Tanggal Mulai</label>
+                                    <input name="tanggalMulai" type="date" required />
+                                </div>
+                                <div><label>Kapasitas Mahasiswa</label>
+                                    <input name="kapasitasRuangan" type="text" required />
+                                </div>
+
+                                <div class="file-row">
+                                    <div class="file-col">
+                                        <label>File Mahasiswa (xls/xlsx)</label>
+                                        <input name="fileMahasiswa" type="file" accept=".xlsx" required />
+                                    </div>
+                                    <div class="file-col">
+                                        <label>File Preferensi (csv)</label>
+                                        <input name="filePreferensi" type="file" accept=".csv" required />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Container 2 -->
+                <div class="container2 comparison-container">
+                    <div class="left">
+                        <div class="form-grup">
+                            <form id="form2" class="comparison-form">
+                                <div><label>Jumlah Ruangan</label>
+                                    <input name="jumlahRuangan" type="text" required />
+                                </div>
+                                <div><label>Jumlah Hari</label>
+                                    <input name="jumlahHari" type="text" required />
+                                </div>
+                                <div><label>Jumlah Slot per Hari</label>
+                                    <input name="jumlahSlot" type="text" placeholder="Contoh: 7" required />
+                                </div>
+                                <div><label>Tanggal Mulai</label>
+                                    <input name="tanggalMulai" type="date" required />
+                                </div>
+                                <div><label>Kapasitas Mahasiswa</label>
+                                    <input name="kapasitasRuangan" type="text" required />
+                                </div>
+
+                                <div class="file-row">
+                                    <div class="file-col">
+                                        <label>File Mahasiswa (xls/xlsx)</label>
+                                        <input name="fileMahasiswa" type="file" accept=".xlsx" required />
+                                    </div>
+                                    <div class="file-col">
+                                        <label>File Preferensi (csv)</label>
+                                        <input name="filePreferensi" type="file" accept=".csv" required />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Container 3 -->
+                <div class="container2 comparison-container">
+                    <div class="left">
+                        <div class="form-grup">
+                            <form id="form3" class="comparison-form">
+                                <div><label>Jumlah Ruangan</label>
+                                    <input name="jumlahRuangan" type="text" required />
+                                </div>
+                                <div><label>Jumlah Hari</label>
+                                    <input name="jumlahHari" type="text" required />
+                                </div>
+                                <div><label>Jumlah Slot per Hari</label>
+                                    <input name="jumlahSlot" type="text" placeholder="Contoh: 7" required />
+                                </div>
+                                <div><label>Tanggal Mulai</label>
+                                    <input name="tanggalMulai" type="date" required />
+                                </div>
+                                <div><label>Kapasitas Mahasiswa</label>
+                                    <input name="kapasitasRuangan" type="text" required />
+                                </div>
+
+                                <div class="file-row">
+                                    <div class="file-col">
+                                        <label>File Mahasiswa (xls/xlsx)</label>
+                                        <input name="fileMahasiswa" type="file" accept=".xlsx" required />
+                                    </div>
+                                    <div class="file-col">
+                                        <label>File Preferensi (csv)</label>
+                                        <input name="filePreferensi" type="file" accept=".csv" required />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Group untuk semua container -->
+            <div class="comparison-buttons">
+                <button type="button" id="btn-back" onclick="window.location.href='/home_1'">Kembali</button>
+                <button type="button" id="btn-generate">Bandingkan 3 Konfigurasi</button>
+            </div>
+
+            <%- include('partials/footer') %>
+                <script src="home_2.js"></script>
+        </main>
+</body>
+
+</html>

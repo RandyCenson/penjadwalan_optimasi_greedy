@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penjadwalan 2</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style3.css" />
+</head>
+
+<body class="penjadwalan-page">
+    <%- include('partials/header', { title }) %>
+        <main class="penjadwalan-content">
+            <h3>Hasil Perbandingan 3 Konfigurasi Penjadwalan</h3>
+
+            <!-- Summary Comparison Table -->
+            <div class="summary-section">
+                <h4>Ringkasan Perbandingan</h4>
+                <table id="summaryTable" class="table summary-table">
+                    <thead>
+                        <tr>
+                            <th>Konfigurasi</th>
+                            <th>Parameter</th>
+                            <th>Jumlah Slot</th>
+                            <th>Jumlah Mahasiswa</th>
+                            <th>Waktu Eksekusi</th>
+                            <th>Assigned</th>
+                            <th>Unassigned</th>
+                            <th>Objective</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- Detail Tables for Each Configuration -->
+            <div class="detail-section">
+                <h4>Detail Jadwal Per Konfigurasi</h4>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="1">Konfigurasi 1</button>
+                    <button class="tab-btn" data-tab="2">Konfigurasi 2</button>
+                    <button class="tab-btn" data-tab="3">Konfigurasi 3</button>
+                </div>
+
+                <!-- Tab Content for Config 1 -->
+                <div class="tab-content active" id="tab-1">
+                    <div class="config-tables">
+                        <div class="table-wrapper">
+                            <h5>Mahasiswa Terjadwal</h5>
+                            <div class="table-scroll">
+                                <table id="table1-assigned" class="table detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Hari</th>
+                                            <th>Slot</th>
+                                            <th>Ruangan</th>
+                                            <th>NIM</th>
+                                            <th>Nama</th>
+                                            <th>Type</th>
+                                            <th>Pembimbing</th>
+                                            <th>Dosen yang Hadir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="table-wrapper">
+                            <h5>Mahasiswa Tidak Terjadwal</h5>
+                            <div class="table-scroll">
+                                <table id="table1-unassigned" class="table detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>NIM</th>
+                                            <th>Nama</th>
+                                            <th>Type</th>
+                                            <th>Pembimbing</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content for Config 2 -->
+                <div class="tab-content" id="tab-2">
+                    <div class="config-tables">
+                        <div class="table-wrapper">
+                            <h5>Mahasiswa Terjadwal</h5>
+                            <div class="table-scroll">
+                                <table id="table2-assigned" class="table detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Hari</th>
+                                            <th>Slot</th>
+                                            <th>Ruangan</th>
+                                            <th>NIM</th>
+                                            <th>Nama</th>
+                                            <th>Type</th>
+                                            <th>Pembimbing</th>
+                                            <th>Dosen yang Hadir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="table-wrapper">
+                            <h5>Mahasiswa Tidak Terjadwal</h5>
+                            <div class="table-scroll">
+                                <table id="table2-unassigned" class="table detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>NIM</th>
+                                            <th>Nama</th>
+                                            <th>Type</th>
+                                            <th>Pembimbing</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content for Config 3 -->
+                <div class="tab-content" id="tab-3">
+                    <div class="config-tables">
+                        <div class="table-wrapper">
+                            <h5>Mahasiswa Terjadwal</h5>
+                            <div class="table-scroll">
+                                <table id="table3-assigned" class="table detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Hari</th>
+                                            <th>Slot</th>
+                                            <th>Ruangan</th>
+                                            <th>NIM</th>
+                                            <th>Nama</th>
+                                            <th>Type</th>
+                                            <th>Pembimbing</th>
+                                            <th>Dosen yang Hadir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="table-wrapper">
+                            <h5>Mahasiswa Tidak Terjadwal</h5>
+                            <div class="table-scroll">
+                                <table id="table3-unassigned" class="table detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>NIM</th>
+                                            <th>Nama</th>
+                                            <th>Type</th>
+                                            <th>Pembimbing</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action">
+                <button id="btn-kembali">Kembali</button>
+            </div>
+        </main>
+        <%- include('partials/footer') %>
+            <script src="/penjadwalan_2.js"></script>
+</body>
+
+</html>

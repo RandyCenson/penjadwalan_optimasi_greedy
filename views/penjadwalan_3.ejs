@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penjadwalan 3 - Perbandingan Greedy vs Gurobi </title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style3.css" />
+</head>
+
+<body class="penjadwalan-page">
+    <%- include('partials/header', { title }) %>
+        <main class="penjadwalan-content">
+            <h3>Perbandingan Greedy vs Gurobi</h3>
+            <div class="comparison-table-container">
+                <table id="comparisonTable" class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Sampel</th>
+                            <th rowspan="2">Jumlah Mahasiswa</th>
+                            <th colspan="4">Greedy</th>
+                            <th colspan="4">Gurobi</th>
+                        </tr>
+                        <tr>
+                            <th>Waktu Eksekusi</th>
+                            <th>Jumlah Assigned</th>
+                            <th>Jumlah Unassigned</th>
+                            <th>Objective</th>
+                            <th>Waktu Eksekusi</th>
+                            <th>Jumlah Assigned</th>
+                            <th>Jumlah Unassigned</th>
+                            <th>Objective</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sampel 1</td>
+                            <td>3</td>
+                            <td id="greedy-1-time">-</td>
+                            <td id="greedy-1-assigned">-</td>
+                            <td id="greedy-1-unassigned">-</td>
+                            <td id="greedy-1-objective">-</td>
+                            <td id="gurobi-1-time">-</td>
+                            <td id="gurobi-1-assigned">-</td>
+                            <td id="gurobi-1-unassigned">-</td>
+                            <td id="gurobi-1-objective">-</td>
+                        </tr>
+                        <tr>
+                            <td>Sampel 2</td>
+                            <td>10</td>
+                            <td id="greedy-2-time">-</td>
+                            <td id="greedy-2-assigned">-</td>
+                            <td id="greedy-2-unassigned">-</td>
+                            <td id="greedy-2-objective">-</td>
+                            <td id="gurobi-2-time">-</td>
+                            <td id="gurobi-2-assigned">-</td>
+                            <td id="gurobi-2-unassigned">-</td>
+                            <td id="gurobi-2-objective">-</td>
+                        </tr>
+                        <tr>
+                            <td>Sampel 3</td>
+                            <td>15</td>
+                            <td id="greedy-3-time">-</td>
+                            <td id="greedy-3-assigned">-</td>
+                            <td id="greedy-3-unassigned">-</td>
+                            <td id="greedy-3-objective">-</td>
+                            <td id="gurobi-3-time">-</td>
+                            <td id="gurobi-3-assigned">-</td>
+                            <td id="gurobi-3-unassigned">-</td>
+                            <td id="gurobi-3-objective">-</td>
+                        </tr>
+                        <tr>
+                            <td>Sampel 4</td>
+                            <td>20</td>
+                            <td id="greedy-4-time">-</td>
+                            <td id="greedy-4-assigned">-</td>
+                            <td id="greedy-4-unassigned">-</td>
+                            <td id="greedy-4-objective">-</td>
+                            <td id="gurobi-4-time">-</td>
+                            <td id="gurobi-4-assigned">-</td>
+                            <td id="gurobi-4-unassigned">-</td>
+                            <td id="gurobi-4-objective">-</td>
+                        </tr>
+                        <tr>
+                            <td>Sampel 5</td>
+                            <td>25</td>
+                            <td id="greedy-5-time">-</td>
+                            <td id="greedy-5-assigned">-</td>
+                            <td id="greedy-5-unassigned">-</td>
+                            <td id="greedy-5-objective">-</td>
+                            <td id="gurobi-5-time">-</td>
+                            <td id="gurobi-5-assigned">-</td>
+                            <td id="gurobi-5-unassigned">-</td>
+                            <td id="gurobi-5-objective">-</td>
+                        </tr>
+                        <tr>
+                            <td>Sampel 6</td>
+                            <td>30</td>
+                            <td id="greedy-6-time">-</td>
+                            <td id="greedy-6-assigned">-</td>
+                            <td id="greedy-6-unassigned">-</td>
+                            <td id="greedy-6-objective">-</td>
+                            <td id="gurobi-6-time">-</td>
+                            <td id="gurobi-6-assigned">-</td>
+                            <td id="gurobi-6-unassigned">-</td>
+                            <td id="gurobi-6-objective">-</td>
+                        </tr>
+                        <tr>
+                            <td>Sampel 7</td>
+                            <td>35</td>
+                            <td id="greedy-7-time">-</td>
+                            <td id="greedy-7-assigned">-</td>
+                            <td id="greedy-7-unassigned">-</td>
+                            <td id="greedy-7-objective">-</td>
+                            <td id="gurobi-7-time">-</td>
+                            <td id="gurobi-7-assigned">-</td>
+                            <td id="gurobi-7-unassigned">-</td>
+                            <td id="gurobi-7-objective">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="action">
+                <button id="btn-run-comparison">Jalankan Perbandingan</button>
+                <button id="btn-kembali">Kembali</button>
+            </div>
+        </main>
+        <%- include('partials/footer') %>
+            <script src="/penjadwalan_3.js"></script>
+</body>
+
+</html>
