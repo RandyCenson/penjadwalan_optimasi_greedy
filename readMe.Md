@@ -59,9 +59,6 @@ Password: 1
 
 -   Input data mahasiswa dan preferensi ketersediaan dosen (Excel)
 -   Penjadwalan otomatis menggunakan algoritma Greedy
--   Perbandingan hasil penjadwalan Greedy pada beberapa dataset
--   Perbandingan hasil Greedy dengan model matematis (EQMKP-BPP)
--   Visualisasi distribusi jadwal berdasarkan hari dan ruangan
 -   Ekspor hasil penjadwalan ke format Excel
 
 ---
@@ -69,7 +66,6 @@ Password: 1
 ## Catatan Penggunaan
 
 -   Format file Excel mahasiswa dan preferensi dosen harus sesuai dengan spesifikasi yang telah ditentukan.
--   Sistem dirancang untuk keperluan penelitian dan simulasi penjadwalan seminar magang.
 -   Hasil penjadwalan dapat disesuaikan kembali secara manual jika diperlukan.
 
 ---
